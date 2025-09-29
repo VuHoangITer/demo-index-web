@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+  <head>
+    <!-- 🔹 Phần HEAD: Cấu hình cơ bản, SEO, load thư viện -->
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Bricon - Giải Pháp Xây Dựng Hiện Đại</title>
+    <meta name="description" content="Bricon cung cấp keo dán gạch, keo chà ron, chống thấm chất lượng cao. Giải pháp xây dựng hiện đại, giá cạnh tranh, giao hàng toàn quốc.">
+
+
+    <!-- Load CSS và Icon -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+
+    <!-- Custom CSS (Màu thương hiệu, hiệu ứng, style riêng) -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+        color: #1f2937;
+        background-color: #ffffff;
+      }
+      .bricon-yellow-600 {
+        background-color: #000000;
+      }
+      .bricon-yellow-500 {
+        background-color: #ffd700;
+      }
+      .bricon-text-600 {
+        color: #000000;
+      }
+      .bricon-text-500 {
+        color: #000000;
+      }
+
+       /* Hiệu ứng hover cho button */
+      .btn-primary {
+        transition: all 0.3s ease;
+      }
+      .btn-primary:hover {
+        box-shadow: 0 10px 15px -3px rgba(183, 210, 9, 0.4),
+          0 4px 6px -2px rgba(229, 255, 0, 0.2);
+      }
+
+      /* Nút lọc active */
+      .filter-button.active {
+        background-color: #000000;
+        color: white;
+        box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.2),
+          0 2px 4px -2px rgba(245, 158, 11, 0.1);
+      }
+
+      /* Style carousel */
+      .carousel-track {
+        display: flex;
+        transition: transform 0.7s ease-in-out;
+      }
+      .carousel-slide {
+        flex-shrink: 0;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      .dot.active {
+        background-color: white !important;
+      }
+      /* Custom dot pagination */
+      .swiper-pagination-bullet {
+        background: #d1d5db;
+        opacity: 1;
+      }
+      .swiper-pagination-bullet-active {
+        background: #facc15;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================================
+         1. TOP BAR (Hotline, Email, Zalo, FB)
+    ================================== -->
+    <div class="bricon-yellow-600 text-white py-2 text-sm hidden md:block">
+      <div
+        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center"
+      >
+        <!-- Trái: Contact Info -->
+        <div class="flex space-x-6 items-center">
+          <div class="flex items-center space-x-2">
+            <i class="w-4 h-4" data-lucide="phone"></i>
+            <span>Hotline: 090.118.0094</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <i class="w-4 h-4" data-lucide="mail"></i>
+            <span>info@bricon.vn</span>
+          </div>
+        </div>
+        <!-- Phải: Zalo -->
+        <div class="flex space-x-4 items-center">
+          <a
+            class="hover:text-gray-200 transition"
+            href="https://zalo.me/0901180094"
+            target="_blank"
+          >
+            <i
+              class="w-4 h-4 inline-block mr-1"
+              data-lucide="message-square"
+            ></i>
+            Chat Zalo
+          </a>
+          <a
+            class="hover:text-gray-200 transition"
+            href="https://www.facebook.com/messages/t/168331056704131"
+            target="_blank"
+          >
+            <i
+              class="w-4 h-4 inline-block mr-1"
+              data-lucide="message-square"
+            ></i>
+            Chat Message
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- ================================
+         2. HEADER (Logo + Navigation + Mobile Menu)
+    ================================== -->
+    <header class="bg-[#FFD600] shadow-md sticky top-0 z-50">
+      <div
+        class="max-w-6xl mx-auto flex items-center justify-between px-6 py-3"
+      >
+        <!-- Logo + slogan -->
+        <div class="flex items-center space-x-3">
+          <div class="flex flex-col">
+            <img
+              alt="Bricon Logo"
+              class="h-10"
+              src="https://bricon.vn/wp-content/uploads/2023/07/logo.png"
+            />
+          </div>
+        </div>
+
+        <!-- Menu Desktop -->
+        <nav class="hidden md:flex space-x-8 text-gray-800 font-medium">
+
+          <!-- Dropdown Bricon -->
+          <div class="relative group">
+            <button class="hover:text-blue-600 transition flex items-center">
+              Bricon
+              <i class="w-4 h-4 ml-1" data-lucide="chevron-down"></i>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out"
+            >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Giới thiệu</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Dự án tiêu biểu</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100">Liên hệ</a>
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Chính sách</a
+              >
+            </div>
+          </div>
+
+          <!-- Dropdown Sản phẩm -->
+          <div class="relative group">
+            <button class="hover:text-blue-600 transition flex items-center">
+              Sản phẩm
+              <i class="w-4 h-4 ml-1" data-lucide="chevron-down"></i>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out"
+            >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Keo Dán Gạch</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Keo Chà Ron</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Chống Thấm</a
+              >
+            </div>
+          </div>
+
+          <!-- Dropdown Tin tức -->
+          <div class="relative group">
+            <button class="hover:text-blue-600 transition flex items-center">
+              Tin tức
+              <i class="w-4 h-4 ml-1" data-lucide="chevron-down"></i>
+            </button>
+            <div
+              class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out"
+            >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Kiến thức thi công</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Câu hỏi thường gặp</a
+              >
+              <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                >Khuyến mãi</a
+              >
+            </div>
+          </div>
+
+          <a href="#" class="hover:text-blue-600 transition">Tuyển dụng</a>
+        </nav>
+
+        <!-- Nút bên phải -->
+        <div class="hidden md:block">
+          <a
+            href="#"
+            class="bg-[#ffa92e] text-black font-semibold py-2 px-5 rounded-lg shadow hover:bg-[#ffbaaa] transition"
+          >
+            Tư vấn báo giá
+          </a>
+        </div>
+      <!-- Mobile Menu -->
+      <div class="md:hidden">
+      <!-- 3 Gạch Icon -->
+      <button id="mobile-menu-toggle" class="text-gray-800 focus:outline-none p-4">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+        </svg>
+      </button>
+
+              <!-- Mobile Menu Content -->
+              <nav id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50 hidden">
+                <div class="flex justify-end p-4">
+                  <button id="mobile-menu-close" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                  </button>
+                </div>
+                <div class="flex flex-col p-4 space-y-4">
+                  <div>
+                    <button class="text-gray-600 hover:text-blue-600 font-semibold text-lg w-full text-left" onclick="toggleSubmenu(this)">Bricon</button>
+                    <div class="submenu ml-4 mt-2 space-y-2 hidden">
+                      <a href="#" class="block text-gray-600 hover:text-blue-600">Giới thiệu</a>
+                      <a href="#" class="block text-gray-600 hover:text-blue-600">Dự án tiêu biểu</a>
+                      <a href="#" class="block text-gray-600 hover:text-blue-600">Liên hệ</a>
+                      <a href="#" class="block text-gray-600 hover:text-blue-600">Chính sách</a>
+                    </div>
+                  </div>
+                  <div>
+                    <button class="text-gray-600 hover:text-blue-600 font-semibold text-lg w-full text-left" onclick="toggleSubmenu(this)">Sản phẩm</button>
+                    <div class="submenu ml-4 mt-2 space-y-2 hidden">
+                      <a href="#" class="block text-gray-600 hover:text-blue-600">Keo Dán Gạch</a>
+                      <a href="#" class="block text-gray-600 hover:text-blue-600">Keo Chà Ron</a>
+                      <a href="#" class="block text-gray-600 hover:text-blue-600">Chống Thấm</a>
+                    </div>
+                  </div>
+                  <div>
+                    <button class="text-gray-600 hover:text-blue-600 font-semibold text-lg w-full text-left" onclick="toggleSubmenu(this)">Tin tức</button>
+                    <div class="submenu ml-4 mt-2 space-y-2 hidden">
+                      <a href="#" class="block text-gray-600 hover:text-blue-600">Kiến thức thi công</a>
+                      <a href="#" class="block text-gray-600 hover:text-blue-600">Câu hỏi thường gặp</a>
+                      <a href="#" class="block text-gray-600 hover:text-blue-600">Khuyến mãi</a>
+                    </div>
+                  </div>
+                  <a href="#" class="text-gray-600 hover:text-blue-600 text-lg">Tuyển dụng</a>
+                  <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 text-center">Tư vấn báo giá</a>
+                </div>
+              </nav>
+            </div>
+    </header>
+    <!-- ================================
+         3. BANNER SLIDER (Hero + H1 chính SEO)
+    ================================== -->
+    <section
+      class="bg-gray-800 text-white relative overflow-hidden h-96 md:h-[480px]"
+      id="carousel"
+    >
+      <!-- Carousel Track: Chứa tất cả các slide -->
+      <div class="carousel-track h-full" id="carousel-track">
+        <!-- Slide 1 -->
+        <div
+          class="carousel-slide h-full flex items-center justify-center text-center px-4 relative"
+          style="
+            background-image: url('https://picsum.photos/1920/600');
+          "
+        >
+          <!-- Lớp phủ tối để chữ dễ đọc -->
+          <div class="absolute inset-0 bg-black opacity-40"></div>
+
+          <!-- H1 chính cho SEO -->
+          <h1 class="relative z-10 text-2xl md:text-5xl font-extrabold leading-tight max-w-3xl">
+            Keo Xây Dựng &amp; Chống Thấm  Bricon
+          </h1>
+        </div>
+
+        <!-- Slide 2 -->
+        <div
+          class="carousel-slide h-full"
+          style="
+            background-image: url('https://placehold.co/1920x600/D97706/ffffff?');
+          "
+        >
+          <div class="absolute inset-0 bg-black opacity-10"></div>
+        </div>
+        <!-- Slide 3 -->
+        <div
+          class="carousel-slide h-full"
+          style="
+            background-image: url('https://placehold.co/1920x600/FCD34D/1F2937?');
+          "
+        >
+          <div class="absolute inset-0 bg-black opacity-10"></div>
+        </div>
+      </div>
+      <!-- End carousel-track -->
+      <!-- Slider Controls (Arrows) -->
+      <button
+        aria-label="Previous slide"
+        class="absolute left-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-white/30 hover:bg-white/50 transition z-20"
+        id="prev-btn"
+      >
+        <i class="w-6 h-6 text-white" data-lucide="chevron-left"></i>
+      </button>
+      <button
+        aria-label="Next slide"
+        class="absolute right-4 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-white/30 hover:bg-white/50 transition z-20"
+        id="next-btn"
+      >
+        <i class="w-6 h-6 text-white" data-lucide="chevron-right"></i>
+      </button>
+      <!-- Slider Indicators (Dots) -->
+      <div
+        class="absolute bottom-4 z-20 flex space-x-2 left-1/2 transform -translate-x-1/2"
+        id="carousel-dots"
+      ></div>
+    </section>
+    <!-- ================================
+         4. Ưu điểm nổi bật
+    ================================== -->
+    <section
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 -mt-10 md:-mt-16 relative z-20"
+    >
+      <div
+        class="grid grid-cols-2 md:grid-cols-4 gap-6 bg-white p-6 md:p-8 rounded-xl shadow-2xl"
+      >
+        <!-- 1 -->
+        <div class="text-center p-3">
+          <div class="bricon-text-600 mx-auto mb-3">
+            <i class="w-8 h-8 mx-auto" data-lucide="shield-check"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Công nghệ cao</h3>
+          <p class="text-gray-500 text-sm">
+            Công nghệ chống thấm 3 lớp tiên tiến.
+          </p>
+        </div>
+        <!-- 2 -->
+        <div class="text-center p-3">
+          <div class="bricon-text-600 mx-auto mb-3">
+            <i class="w-8 h-8 mx-auto" data-lucide="handshake"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Giá Cả Cạnh Tranh</h3>
+          <p class="text-gray-500 text-sm">
+            Chất lượng cao với mức giá hợp lý nhất
+          </p>
+        </div>
+        <!-- 3 -->
+        <div class="text-center p-3">
+          <div class="bricon-text-600 mx-auto mb-3">
+            <i class="w-8 h-8 mx-auto" data-lucide="truck"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Vận Chuyển Nhanh</h3>
+          <p class="text-gray-500 text-sm">Giao hàng tận nơi, đúng tiến độ.</p>
+        </div>
+        <!-- 4 -->
+        <div class="text-center p-3">
+          <div class="bricon-text-600 mx-auto mb-3">
+            <i class="w-8 h-8 mx-auto" data-lucide="phone"></i>
+          </div>
+          <h3 class="font-bold text-lg mb-1">Hỗ Trợ 24/7</h3>
+          <p class="text-gray-500 text-sm">Tư vấn kỹ thuật chuyên sâu.</p>
+        </div>
+      </div>
+    </section>
+    <!-- ================================
+         5.Nút Floating
+    ================================== -->
+    <div class="fixed left-4 bottom-6 z-50">
+      <!-- Menu con (ẩn mặc định) -->
+      <div id="chat-menu" class="hidden flex-col-reverse space-y-3 mb-3">
+        <!-- Zalo -->
+        <a
+          href="https://zalo.me/0901180094"
+          target="_blank"
+          class="w-12 h-12 flex items-center justify-center rounded-full bg-[#00AEEF] shadow-lg hover:scale-110 transition"
+          title="Chat Zalo"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+            alt="Zalo"
+            class="w-6 h-6"
+          />
+        </a>
+
+        <!-- Hotline -->
+        <a
+          href="tel:0901180094"
+          class="w-12 h-12 flex items-center justify-center rounded-full bg-green-500 shadow-lg hover:scale-110 transition"
+          title="Gọi Hotline"
+        >
+          <i class="w-6 h-6 text-white" data-lucide="phone"></i>
+        </a>
+
+        <!-- Messenger -->
+        <a
+          href="https://m.me/168331056704131"
+          target="_blank"
+          class="w-12 h-12 flex items-center justify-center rounded-full bg-[#fdfdfd] shadow-lg hover:scale-110 transition"
+          title="Chat Messenger"
+        >
+          <img
+            src="https://cdnlogo.com/logos/f/25/facebook-messenger.svg"
+            alt="Messenger"
+            class="w-15 h-15"
+          />
+        </a>
+      </div>
+      <!-- Nút chính -->
+      <button
+        id="chat-toggle"
+        class="w-12 h-12 rounded-full bg-[#1877F2] flex items-center justify-center shadow-lg hover:scale-110 transition"
+      >
+        <i class="w-6 h-6 text-white" data-lucide="message-circle"></i>
+      </button>
+    </div>
+    <!-- ================================
+         6.Sản phẩm 
+    ================================== -->
+    <section class="bg-gray-50 py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row md:justify-between md:items-end mb-8"
+        >
+          <h2 class="text-4xl font-extrabold mb-4 md:mb-0">Sản Phẩm Nổi Bật</h2>
+          <!-- Bộ locj sản phẩm -->
+          <div
+            class="flex flex-wrap gap-2 md:gap-3 text-sm md:text-base justify-center"
+            id="filter-buttons"
+          >
+            <button
+              class="filter-button active bg-white text-gray-700 font-medium py-1 px-3 md:py-2 md:px-4 rounded-full border border-gray-300 hover:bg-gray-100 transition"
+              data-category="all"
+            >
+              Tất Cả
+            </button>
+            <button
+              class="filter-button bg-white text-gray-700 font-medium py-1 px-3 md:py-2 md:px-4 rounded-full border border-gray-300 hover:bg-gray-100 transition"
+              data-category="keo-dan-gach"
+            >
+              Keo Dán Gạch
+            </button>
+            <button
+              class="filter-button bg-white text-gray-700 font-medium py-1 px-3 md:py-2 md:px-4 rounded-full border border-gray-300 hover:bg-gray-100 transition"
+              data-category="keo-cha-ron"
+            >
+              Keo Chà Ron
+            </button>
+            <button
+              class="filter-button bg-white text-gray-700 font-medium py-1 px-3 md:py-2 md:px-4 rounded-full border border-gray-300 hover:bg-gray-100 transition"
+              data-category="chong-tham"
+            >
+              Chống Thấm
+            </button>
+          </div>
+
+        </div>
+        <!--S/P-->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="product-list">
+          <!-- S/P 1 -->
+          <div
+            class="product-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden flex flex-col"
+            data-category="keo-dan-gach"
+          >
+            <img
+              alt="Keo Dán Gạch Bricon"
+              class="w-full h-40 object-cover"
+              src="https://placehold.co/400x300/E5E7EB/F59E0B?text=KEO+DAN+GACH+BRICON+XAM"
+            />
+            <div class="p-4 flex flex-col text-center">
+              <h3 class="text-lg font-semibold mb-3 line-clamp-2 h-[56px]">
+                Keo Dán Gạch Bricon Nội Thất - Màu Xám
+              </h3>
+              <div class="flex flex-wrap justify-center gap-2 mb-4">
+                <span
+                  class="bg-gray-100 text-gray-700 text-[10px] px-2 py-0.5 rounded-full"
+                  >Chống thấm tốt</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-700 text-[10px] px-2 py-0.5 rounded-full"
+                  >Độ bám dính cao</span
+                >
+              </div>
+              <button
+                class="w-full bg-[#FFD600] text-white text-sm font-medium py-2 rounded-lg hover:bg-[#1f2937] transition flex items-center justify-center gap-2"
+              >
+                <i class="w-4 h-4" data-lucide="eye"></i> Xem chi tiết
+              </button>
+            </div>
+          </div>
+
+          <!-- S/P 2 -->
+          <div
+            class="product-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden flex flex-col"
+            data-category="chong-tham"
+          >
+            <img
+              alt="Chống Thấm Bricon 106"
+              class="w-full h-40 object-cover"
+              src="https://placehold.co/400x300/E5E7EB/F59E0B?text=CHONG+THAM+BRICON+106"
+            />
+            <div class="p-4 flex flex-col text-center">
+              <h3 class="text-lg font-semibold mb-3 line-clamp-2 h-[56px]">
+                Chống Thấm Bricon 106
+              </h3>
+              <div class="flex flex-wrap justify-center gap-2 mb-4">
+                <span
+                  class="bg-gray-100 text-gray-700 text-[10px] px-2 py-0.5 rounded-full"
+                  >Chống thấm tuyệt đối</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-700 text-[10px] px-2 py-0.5 rounded-full"
+                  >Dễ thi công</span
+                >
+              </div>
+              <button
+                class="w-full bg-[#FFD600] text-white text-sm font-medium py-2 rounded-lg hover:bg-[#1f2937] transition flex items-center justify-center gap-2"
+              >
+                <i class="w-4 h-4" data-lucide="eye"></i> Xem chi tiết
+              </button>
+            </div>
+          </div>
+
+          <!-- S/P 3 -->
+          <div
+            class="product-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden flex flex-col"
+            data-category="keo-cha-ron"
+          >
+            <img
+              alt="Keo Chà Ron Bricon"
+              class="w-full h-40 object-cover"
+              src="https://placehold.co/400x300/E5E7EB/F59E0B?text=KEO+CHA+RON+BRICON"
+            />
+            <div class="p-4 flex flex-col text-center">
+              <h3 class="text-lg font-semibold mb-3 line-clamp-2 h-[56px]">
+                Keo Chà Ron Bricon
+              </h3>
+              <div class="flex flex-wrap justify-center gap-2 mb-4">
+                <span
+                  class="bg-gray-100 text-gray-700 text-[10px] px-2 py-0.5 rounded-full"
+                  >Chống nấm mốc</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-700 text-[10px] px-2 py-0.5 rounded-full"
+                  >Màu sắc đa dạng</span
+                >
+              </div>
+              <button
+                class="w-full bg-[#FFD600] text-white text-sm font-medium py-2 rounded-lg hover:bg-[#1f2937] transition flex items-center justify-center gap-2"
+              >
+                <i class="w-4 h-4" data-lucide="eye"></i> Xem chi tiết
+              </button>
+            </div>
+          </div>
+
+          <!-- S/P 4 -->
+          <div
+            class="product-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden flex flex-col"
+            data-category="keo-dan-gach"
+          >
+            <img
+              alt="Keo Dán Gạch Bricon"
+              class="w-full h-40 object-cover"
+              src="https://placehold.co/400x300/E5E7EB/F59E0B?text=KEO+DAN+GACH+BRICON"
+            />
+            <div class="p-4 flex flex-col text-center">
+              <h3 class="text-lg font-semibold mb-3 line-clamp-2 h-[56px]">
+                Keo Dán Gạch Bricon Ngoại Thất - Màu Trắng
+              </h3>
+              <div class="flex flex-wrap justify-center gap-2 mb-4">
+                <span
+                  class="bg-gray-100 text-gray-700 text-[10px] px-2 py-0.5 rounded-full"
+                  >Màu trắng tinh khiết</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-700 text-[10px] px-2 py-0.5 rounded-full"
+                  >Không ố vàng</span
+                >
+              </div>
+              <button
+                class="w-full bg-[#FFD600] text-white text-sm font-medium py-2 rounded-lg hover:bg-[#1f2937] transition flex items-center justify-center gap-2"
+              >
+                <i class="w-4 h-4" data-lucide="eye"></i> Xem chi tiết
+              </button>
+            </div>
+          </div>
+           <!-- S/P 5 -->
+          <div
+            class="product-card bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 overflow-hidden flex flex-col"
+            data-category="keo-dan-gach"
+          >
+            <img
+              alt="Keo Dán Gạch Bricon"
+              class="w-full h-40 object-cover"
+              src="https://placehold.co/400x300/E5E7EB/F59E0B?text=KEO+DAN+GACH+BRICON+Xam"
+            />
+            <div class="p-4 flex flex-col text-center">
+              <h3 class="text-lg font-semibold mb-3 line-clamp-2 h-[56px]">
+                Keo Dán Gạch Bricon Ngoại Thất - Màu Xám
+              </h3>
+              <div class="flex flex-wrap justify-center gap-2 mb-4">
+                <span
+                  class="bg-gray-100 text-gray-700 text-[10px] px-2 py-0.5 rounded-full"
+                  >Chất lượng cao</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-700 text-[10px] px-2 py-0.5 rounded-full"
+                  >Không ố vàng</span
+                >
+              </div>
+              <button
+                class="w-full bg-[#FFD600] text-white text-sm font-medium py-2 rounded-lg hover:bg-[#1f2937] transition flex items-center justify-center gap-2"
+              >
+                <i class="w-4 h-4" data-lucide="eye"></i> Xem chi tiết
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nút xem tất cả sản phẩm (luôn hiện) -->
+        <div class="text-center mt-12">
+          <button
+            class="bricon-yellow-500 text-white font-medium py-3 px-8 rounded-lg border border-bricon-yellow-500 hover:bricon-yellow-600 transition"
+          >
+            Xem Tất Cả Sản Phẩm
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- ================================
+         7.VIDEO 
+    ================================== -->
+    <section class="py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+        <div
+          class="w-full lg:w-3/4 flex flex-col md:flex-row bg-gray-100 rounded-xl shadow-xl overflow-hidden"
+        >
+          <!-- Video Placeholder -->
+          <div
+            class="md:w-1/2 relative bg-gray-300 h-64 md:h-auto flex items-center justify-center"
+          >
+            <img
+              alt="Video Giới Thiệu"
+              class="w-full h-full object-cover"
+              src="https://placehold.co/800x600/D1D5DB/F59E0B?text=VIDEO+GIOI+THIEU"
+            />
+            <div
+              class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30"
+            >
+              <button
+                class="text-white p-4 rounded-full bricon-yellow-500/80 hover:bricon-yellow-500 transition"
+              >
+                <i class="w-8 h-8 fill-white" data-lucide="play"></i>
+              </button>
+            </div>
+          </div>
+          <!-- Video Content -->
+          <div class="md:w-1/2 p-8 flex flex-col justify-center">
+          <h2 class="text-3xl font-extrabold mb-4 text-center leading-snug">
+            Tìm Hiểu Thêm Về <span class="text-[#FFD600]">BRICON</span>
+          </h2>
+            <p class="text-gray-600 mb-6">
+              Khám phá công nghệ hiện đại và quy trình kiểm soát chất lượng
+              nghiêm ngặt tại nhà máy Bricon để tạo ra những vật liệu xây dựng
+              tốt nhất.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================================
+         8.Dự án tiêu biểu 
+    ================================== -->
+    <section class="py-16 bg-[#0F2C73] text-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+          Dự Án Tiêu Biểu
+        </h2>
+        <p class="text-gray-200 max-w-2xl mx-auto mb-12">
+          Bricon đã góp mặt cho hơn 1000 công trình và hàng triệu căn nhà từ Bắc
+          tới Nam trong hơn 10 năm xây dựng và phát triển.
+        </p>
+
+        <!-- Swiper -->
+        <div class="swiper myProjectSwiper">
+          <div class="swiper-wrapper">
+            <!-- Dự án 1 -->
+            <div class="swiper-slide">
+              <div
+                class="bg-white text-gray-900 rounded-xl shadow-lg overflow-hidden"
+              >
+                <img
+                  src="https://picsum.photos/600/400?random=17"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-4 text-left">
+                  <div class="flex justify-between text-sm mb-2">
+                    <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded"
+                      >Khách sạn</span
+                    >
+                    <span class="text-gray-500">Hồ Chí Minh</span>
+                  </div>
+                  <h3 class="font-bold text-lg">DỰ ÁN 1</h3>
+                </div>
+              </div>
+            </div>
+            <!-- Dự án 2 -->
+            <div class="swiper-slide">
+              <div
+                class="bg-white text-gray-900 rounded-xl shadow-lg overflow-hidden"
+              >
+                <img
+                  src="https://picsum.photos/600/400?random=12"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-4 text-left">
+                  <div class="flex justify-between text-sm mb-2">
+                    <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded"
+                      >Resort</span
+                    >
+                    <span class="text-gray-500">Đà Lạt</span>
+                  </div>
+                  <h3 class="font-bold text-lg">DỰ ÁN 2</h3>
+                </div>
+              </div>
+            </div>
+            <!-- Dự án 3 -->
+            <div class="swiper-slide">
+              <div
+                class="bg-white text-gray-900 rounded-xl shadow-lg overflow-hidden"
+              >
+                <img
+                  src="https://picsum.photos/600/400?random=11"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-4 text-left">
+                  <div class="flex justify-between text-sm mb-2">
+                    <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded"
+                      >Resort</span
+                    >
+                    <span class="text-gray-500">Đà Lạt</span>
+                  </div>
+                  <h3 class="font-bold text-lg">DỰ ÁN 3</h3>
+                </div>
+              </div>
+            </div>
+            <!-- Dự án 4 -->
+            <div class="swiper-slide">
+              <div
+                class="bg-white text-gray-900 rounded-xl shadow-lg overflow-hidden"
+              >
+                <img
+                  src="https://picsum.photos/600/400?random=13"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-4 text-left">
+                  <div class="flex justify-between text-sm mb-2">
+                    <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded"
+                      >Golf</span
+                    >
+                    <span class="text-gray-500">Long An</span>
+                  </div>
+                  <h3 class="font-bold text-lg">DỰ ÁN 4</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Dots -->
+          <div class="swiper-pagination mt-6"></div>
+        </div>
+
+        <!-- Nút xem thêm -->
+        <div class="mt-12">
+          <a
+            href="#"
+            class="bg-white text-gray-900 font-medium py-3 px-6 rounded-lg shadow hover:bg-gray-100 transition inline-block"
+          >
+            Xem Thêm Dự Án
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ================================
+         9.Tin tức , Blog
+    ================================== -->
+    <section class="py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-extrabold text-center mb-12">
+          Tin Tức Xây Dựng Mới
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- 1 -->
+          <div
+            class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300"
+          >
+            <img
+              alt="Tin tức 1"
+              class="w-full h-48 object-cover rounded-t-xl"
+              src="https://placehold.co/600x400/E5E7EB/F59E0B?text=TIN+TUC+1"
+            />
+            <div class="p-5">
+              <p class="text-sm text-gray-500 mb-2">25/09/2025</p>
+              <h3
+                class="text-xl font-bold mb-3 hover:bricon-text-600 transition cursor-pointer"
+              >
+                Xu hướng vật liệu xanh trong kiến trúc 2025
+              </h3>
+              <p class="text-gray-600 line-clamp-3">
+                Nghiên cứu mới nhất về các vật liệu thân thiện với môi trường
+                đang được ứng dụng rộng rãi trong các dự án lớn tại Châu Á...
+              </p>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div
+            class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300"
+          >
+            <img
+              alt="Tin tức 2"
+              class="w-full h-48 object-cover rounded-t-xl"
+              src="https://placehold.co/600x400/E5E7EB/F59E0B?text=TIN+TUC+2"
+            />
+            <div class="p-5">
+              <p class="text-sm text-gray-500 mb-2">18/09/2025</p>
+              <h3
+                class="text-xl font-bold mb-3 hover:bricon-text-600 transition cursor-pointer"
+              >
+                Bricon giới thiệu dòng sản phẩm chống thấm mới
+              </h3>
+              <p class="text-gray-600 line-clamp-3">
+                Dòng sản phẩm mới với công nghệ Polymer tiên tiến, đảm bảo khả
+                năng kháng nước và tuổi thọ công trình vượt trội...
+              </p>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div
+            class="bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300"
+          >
+            <img
+              alt="Tin tức 3"
+              class="w-full h-48 object-cover rounded-t-xl"
+              src="https://placehold.co/600x400/E5E7EB/F59E0B?text=TIN+TUC+3"
+            />
+            <div class="p-5">
+              <p class="text-sm text-gray-500 mb-2">10/09/2025</p>
+              <h3
+                class="text-xl font-bold mb-3 hover:bricon-text-600 transition cursor-pointer"
+              >
+                Kinh nghiệm thi công bê tông đúng kỹ thuật
+              </h3>
+              <p class="text-gray-600 line-clamp-3">
+                Các chuyên gia Bricon chia sẻ những lời khuyên hữu ích để đảm
+                bảo chất lượng và độ bền vững của kết cấu bê tông...
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================================
+         10.CTA HỢP TÁC (Partner/Recruitment)
+    ================================== -->
+    <section class="bricon-yellow-500 text-gray-900 py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+          Bạn đang tìm kiếm cơ hội hợp tác?
+        </h2>
+        <p class="text-xl text-gray-700 mb-8">
+          Trở thành đại lý, nhà phân phối hoặc ứng tuyển vào đội ngũ chuyên
+          nghiệp của Bricon.
+        </p>
+        <button
+          class="bg-white text-gray-900 font-bold py-3 px-8 rounded-lg shadow-xl hover:bg-gray-100 transition"
+        >
+          Liên Hệ Hợp Tác Ngay
+        </button>
+      </div>
+    </section>
+    <!-- ================================
+         11.FAQ
+    ================================== -->
+    <section class="bg-gray-50 py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-extrabold text-center mb-12">
+          Câu Hỏi Thường Gặp
+        </h2>
+        <div class="space-y-4" id="faq-accordion">
+          <!-- FAQ Item 1 -->
+          <div class="bg-white p-5 rounded-xl shadow-md border border-gray-200">
+            <button
+              class="w-full flex justify-between items-center text-left font-semibold text-lg bricon-text-600"
+              onclick="toggleAccordion(this)"
+            >
+              <span
+                >Sản phẩm Bricon có đạt tiêu chuẩn chất lượng quốc tế
+                không?</span
+              >
+              <i
+                class="w-5 h-5 transition-transform duration-300 transform"
+                data-lucide="chevron-down"
+              ></i>
+            </button>
+            <div
+              class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <p class="pt-3 text-gray-600 border-t mt-3">
+                Tất cả sản phẩm của Bricon đều được sản xuất theo quy trình
+                nghiêm ngặt và đạt các chứng nhận chất lượng quốc tế như ISO
+                9001 và các tiêu chuẩn ngành liên quan. Chúng tôi cam kết mang
+                đến chất lượng tốt nhất cho công trình của bạn.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 2 -->
+          <div class="bg-white p-5 rounded-xl shadow-md border border-gray-200">
+            <button
+              class="w-full flex justify-between items-center text-left font-semibold text-lg bricon-text-600"
+              onclick="toggleAccordion(this)"
+            >
+              <span>Làm sao để liên hệ đặt hàng và nhận báo giá?</span>
+              <i
+                class="w-5 h-5 transition-transform duration-300 transform"
+                data-lucide="chevron-down"
+              ></i>
+            </button>
+            <div
+              class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <p class="pt-3 text-gray-600 border-t mt-3">
+                Quý khách có thể liên hệ trực tiếp qua **Hotline: 090.118.0094**
+                hoặc điền vào form đăng ký dưới chân trang (Footer). Đội ngũ
+                kinh doanh của chúng tôi sẽ phản hồi và gửi báo giá chi tiết
+                trong vòng 2 giờ làm việc.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 3 -->
+          <div class="bg-white p-5 rounded-xl shadow-md border border-gray-200">
+            <button
+              class="w-full flex justify-between items-center text-left font-semibold text-lg bricon-text-600"
+              onclick="toggleAccordion(this)"
+            >
+              <span>Chính sách bảo hành và đổi trả vật liệu như thế nào?</span>
+              <i
+                class="w-5 h-5 transition-transform duration-300 transform"
+                data-lucide="chevron-down"
+              ></i>
+            </button>
+            <div
+              class="accordion-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <p class="pt-3 text-gray-600 border-t mt-3">
+                Bricon áp dụng chính sách bảo hành 12 tháng cho tất cả các sản
+                phẩm kể từ ngày giao hàng. Chúng tôi hỗ trợ đổi trả nếu sản phẩm
+                bị lỗi kỹ thuật hoặc không đúng quy cách như đã cam kết.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================================
+         12.Footer
+    ================================== -->
+<footer class="bg-gray-900 text-white pt-8 pb-6 md:pt-12 md:pb-8">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 border-b border-gray-700 pb-8 md:pb-10"
+    >
+      <!-- Tổng đài hỗ trợ -->
+      <div class="text-center md:text-left">
+        <!-- nút mở/đóng trên mobile -->
+        <button
+          class="w-full flex justify-between items-center text-left font-bold text-base md:text-lg mb-3 md:mb-4 md:cursor-default"
+          onclick="toggleFooterAccordion(this)"
+        >
+          Tổng đài hỗ trợ
+          <svg
+            class="w-4 h-4 ml-2 md:hidden transition-transform"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="footer-content hidden md:block space-y-1 text-sm md:text-base">
+          <p class="font-semibold">📞 Phía Bắc & Trung</p>
+          <p>Mua hàng: (024) 1111 1111</p>
+          <p>Bảo hành: (028) 11 111 111</p>
+          <p class="font-semibold pt-2">📞 Phía Nam</p>
+          <p>Mua hàng: (028) 1111 1111</p>
+          <p>Bảo hành: (028) 11 111 111</p>
+          <p class="font-semibold pt-2">⏰ Thời gian làm việc</p>
+          <p>8h - 17h30 (Thứ 2 - Thứ 7)</p>
+        </div>
+      </div>
+
+      <!-- Hỗ trợ khách hàng -->
+      <div class="text-center md:text-left">
+        <button
+          class="w-full flex justify-between items-center text-left font-bold text-base md:text-lg mb-3 md:mb-4 md:cursor-default"
+          onclick="toggleFooterAccordion(this)"
+        >
+          Hỗ trợ khách hàng
+          <svg class="w-4 h-4 ml-2 md:hidden transition-transform" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="footer-content hidden md:block text-sm md:text-base">
+          <ul class="space-y-1">
+            <li>Điều khoản dịch vụ</li>
+            <li>Chính sách và Quy định chung</li>
+            <li>Hướng dẫn thanh toán</li>
+            <li>Trả góp qua thẻ</li>
+            <li>Trả góp qua công ty tài chính</li>
+            <li>Mua trước trả sau</li>
+            <li>Chính sách Đổi - Trả hàng hóa</li>
+            <li>Chính sách Bảo hành</li>
+            <li>Hóa đơn GTGT điện tử</li>
+            <li>Chính sách quyền riêng tư</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Về BRICON -->
+      <div class="text-center md:text-left">
+        <button
+          class="w-full flex justify-between items-center text-left font-bold text-base md:text-lg mb-3 md:mb-4 md:cursor-default"
+          onclick="toggleFooterAccordion(this)"
+        >
+          Về Bricon
+          <svg class="w-4 h-4 ml-2 md:hidden transition-transform" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="footer-content hidden md:block text-sm md:text-base">
+          <ul class="space-y-1">
+            <li>Giới thiệu về Bricon</li>
+            <li>Liên hệ</li>
+            <li>Tuyển dụng</li>
+            <li>Đối tác doanh nghiệp</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Liên hệ với chúng tôi -->
+      <div class="text-center md:text-left">
+        <button
+          class="w-full flex justify-between items-center text-left font-bold text-base md:text-lg mb-3 md:mb-4 md:cursor-default"
+          onclick="toggleFooterAccordion(this)"
+        >
+          Liên hệ với chúng tôi
+          <svg class="w-4 h-4 ml-2 md:hidden transition-transform" fill="none"
+            stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 9l-7 7-7-7" />
+          </svg>
+        </button>
+        <div class="footer-content hidden md:block space-y-1 text-sm md:text-base">
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:info@bricon.vn" class="hover:underline">info@bricon.vn</a>
+          </p>
+          <p>
+            <strong>Hotline:</strong>
+            <a href="tel:1900636294" class="hover:underline">1900.636.294</a>
+          </p>
+          <p>
+            <strong>Điện thoại:</strong>
+            <a href="tel:0901180094" class="hover:underline">0901.180.094</a>
+          </p>
+          <details class="mt-2">
+            <summary class="cursor-pointer font-semibold hover:underline">
+              Xem danh sách chi nhánh & nhà máy
+            </summary>
+              <ul class="mt-2 space-y-1 text-sm pl-4">
+                <li>
+                  <strong>CN 1:</strong> 171-171A An Phú Đông 3, Q.12, TP. HCM
+                </li>
+                <li>
+                  <strong>CN 2:</strong> Tỉnh lộ 52, X. Long Phước, TP. Bà Rịa
+                </li>
+                <li>
+                  <strong>CN 3:</strong> 65/33 Nguyễn Chí Thanh, TP. Quảng Ngãi
+                </li>
+                <li>
+                  <strong>CN 4:</strong> Đ. Nguyễn Văn Voi, H. Châu Thành, Đồng
+                  Tháp
+                </li>
+                <li>
+                  <strong>CN 5:</strong> 27 Phạm Đình Hổ, TP. Đồng Hới, Quảng
+                  Bình
+                </li>
+                <li>
+                  <strong>CN 6:</strong> 99A KV2, P. Ba Láng, Q. Cái Răng, Cần
+                  Thơ
+                </li>
+                <li>
+                  <strong>Nhà máy:</strong> Ấp Kiến An, X. An Lập, H. Dầu Tiếng,
+                  Bình Dương
+                </li>
+              </ul>
+          </details>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3 md:mt-8 text-center text-xs md:text-sm text-gray-300">
+      © 2025 Bricon. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+
+    <!-- JavaScript for Icon Initialization, Accordion, and Product Filter -->
+    <script>
+// ===========================================================
+// 0. INIT ICONS (Lucide)
+// ===========================================================
+lucide.createIcons();
+
+
+// ===========================================================
+// 1. CAROUSEL (Banner Slider tự động)
+// ===========================================================
+(() => {
+  const carouselTrack = document.getElementById("carousel-track");
+  const slides = [...carouselTrack.querySelectorAll(".carousel-slide")];
+  const totalSlides = slides.length;
+
+  const nextBtn = document.getElementById("next-btn");
+  const prevBtn = document.getElementById("prev-btn");
+  const dotsContainer = document.getElementById("carousel-dots");
+
+  let currentSlide = 0;
+  let slideInterval;
+
+  const updateCarousel = () => {
+    carouselTrack.style.transform = `translateX(${-currentSlide * 100}%)`;
+    dotsContainer.querySelectorAll(".dot").forEach((dot, idx) => {
+      dot.classList.toggle("active", idx === currentSlide);
+      dot.classList.toggle("bg-white", idx === currentSlide);
+      dot.classList.toggle("bg-white/40", idx !== currentSlide);
+    });
+  };
+
+  const goToSlide = (idx) => {
+    currentSlide = (idx + totalSlides) % totalSlides; // vòng tròn
+    updateCarousel();
+  };
+
+  const startAutoSlide = () => {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(() => goToSlide(currentSlide + 1), 5000);
+  };
+
+  // Init dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement("div");
+    dot.className = "dot w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/60 cursor-pointer transition";
+    dot.setAttribute("aria-label", `Slide ${i + 1}`);
+    dot.addEventListener("click", () => {
+      goToSlide(i);
+      startAutoSlide();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  // Gắn sự kiện mũi tên
+  nextBtn.addEventListener("click", () => { goToSlide(currentSlide + 1); startAutoSlide(); });
+  prevBtn.addEventListener("click", () => { goToSlide(currentSlide - 1); startAutoSlide(); });
+
+  // Init
+  updateCarousel();
+  startAutoSlide();
+})();
+
+
+// ===========================================================
+// 2. FAQ ACCORDION
+// ===========================================================
+(() => {
+  const contents = document.querySelectorAll(".accordion-content");
+
+  contents.forEach((c) => (c.style.transition = "max-height 0.5s ease-in-out"));
+
+  window.toggleAccordion = (button) => {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector("i");
+
+    if (content.classList.contains("active")) {
+      content.classList.remove("active");
+      content.style.maxHeight = null;
+      icon.classList.remove("rotate-180");
+    } else {
+      contents.forEach((c) => {
+        c.classList.remove("active");
+        c.style.maxHeight = null;
+        c.previousElementSibling.querySelector("i")?.classList.remove("rotate-180");
+      });
+      content.classList.add("active");
+      content.style.maxHeight = content.scrollHeight + "px";
+      icon.classList.add("rotate-180");
+    }
+  };
+})();
+
+
+// ===========================================================
+// 3. PRODUCT FILTER (chỉ hiển thị 4 sản phẩm)
+// ===========================================================
+(() => {
+  const filterButtons = document.querySelectorAll("#filter-buttons .filter-button");
+  const productList = document.getElementById("product-list");
+  const allProducts = [...productList.querySelectorAll(".product-card")];
+  const MAX_PRODUCTS = 4;
+
+  const filterProducts = (category) => {
+    filterButtons.forEach((btn) => btn.classList.toggle("active", btn.dataset.category === category));
+
+    let visibleCount = 0;
+    allProducts.forEach((product) => {
+      const show = category === "all" || product.dataset.category === category;
+      if (show && visibleCount < MAX_PRODUCTS) {
+        product.style.display = "block";
+        visibleCount++;
+      } else {
+        product.style.display = "none";
+      }
+    });
+  };
+
+  filterButtons.forEach((btn) => btn.addEventListener("click", () => filterProducts(btn.dataset.category)));
+
+  filterProducts("all"); // init
+})();
+
+
+// ===========================================================
+// 4. MOBILE MENU (open / close + click outside)
+// ===========================================================
+(() => {
+  const menuToggle = document.getElementById("mobile-menu-toggle");
+  const menuClose = document.getElementById("mobile-menu-close");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  const closeMenu = () => {
+    mobileMenu.classList.add("translate-x-full");
+    setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+  };
+
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.remove("hidden");
+    setTimeout(() => mobileMenu.classList.remove("translate-x-full"), 10);
+  });
+  menuClose.addEventListener("click", closeMenu);
+
+  document.addEventListener("click", (e) => {
+    if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) closeMenu();
+  });
+})();
+
+
+// ===========================================================
+// 5. FLOATING CHAT (toggle menu nổi)
+// ===========================================================
+(() => {
+  const chatToggle = document.getElementById("chat-toggle");
+  const chatMenu = document.getElementById("chat-menu");
+  chatToggle.addEventListener("click", () => chatMenu.classList.toggle("hidden"));
+})();
+
+
+// ===========================================================
+// 6. SWIPER (Dự Án Tiêu Biểu)
+// ===========================================================
+new Swiper(".myProjectSwiper", {
+  loop: true,
+  slidesPerView: 1,
+  spaceBetween: 20,
+  autoplay: { delay: 1500, disableOnInteraction: false },
+  pagination: { el: ".swiper-pagination", clickable: true },
+  breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } },
+});
+
+
+// ===========================================================
+// 7. FOOTER ACCORDION (mobile)
+// ===========================================================
+window.toggleFooterAccordion = (button) => {
+  if (window.innerWidth < 768) {
+    const content = button.nextElementSibling;
+    const icon = button.querySelector("svg");
+    content.classList.toggle("hidden");
+    icon.classList.toggle("rotate-180");
+  }
+};
+
+
+// ===========================================================
+// 8. SUBMENU MOBILE
+// ===========================================================
+window.toggleSubmenu = (button) => {
+  button.nextElementSibling.classList.toggle("hidden");
+};
+    </script>
+  </body>
+</html>
