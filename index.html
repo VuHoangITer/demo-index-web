@@ -394,54 +394,51 @@
     <!-- ================================
          5.Nút Floating
     ================================== -->
-    <div class="fixed left-4 bottom-6 z-50">
-      <!-- Menu con (ẩn mặc định) -->
-      <div id="chat-menu" class="hidden flex-col-reverse space-y-3 mb-3">
-        <!-- Zalo -->
-        <a
-          href="https://zalo.me/0901180094"
-          target="_blank"
-          class="w-12 h-12 flex items-center justify-center rounded-full bg-[#00AEEF] shadow-lg hover:scale-110 transition"
-          title="Chat Zalo"
-        >
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
-            alt="Zalo"
-            class="w-6 h-6"
-          />
-        </a>
+<!-- Floating Chat -->
+<div class="fixed right-4 bottom-6 z-50 flex flex-col space-y-2.5 text-sm font-semibold">
+  <!-- Zalo -->
+  <a
+    href="https://zalo.me/0901180094"
+    target="_blank"
+    class="flex items-center px-3 py-2 rounded-full bg-[#00AEEF] text-white shadow-md hover:shadow-lg hover:scale-105 transition"
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg"
+      alt="Zalo"
+      class="w-6 h-6 mr-2 bg-white rounded-full p-0.5"
+    />
+    Chat Zalo
+  </a>
 
-        <!-- Hotline -->
-        <a
-          href="tel:0901180094"
-          class="w-12 h-12 flex items-center justify-center rounded-full bg-green-500 shadow-lg hover:scale-110 transition"
-          title="Gọi Hotline"
-        >
-          <i class="w-6 h-6 text-white" data-lucide="phone"></i>
-        </a>
+  <!-- Hotline -->
+  <a
+    href="tel:0901180094"
+    class="flex items-center px-3 py-2 rounded-full bg-[#28A745] text-white shadow-md hover:shadow-lg hover:scale-105 transition"
+  >
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/159/159832.png"
+      alt="Hotline"
+      class="w-6 h-6 mr-2 bg-white rounded-full p-1"
+    />
+    090.118.0094
+  </a>
 
-        <!-- Messenger -->
-        <a
-          href="https://m.me/168331056704131"
-          target="_blank"
-          class="w-12 h-12 flex items-center justify-center rounded-full bg-[#fdfdfd] shadow-lg hover:scale-110 transition"
-          title="Chat Messenger"
-        >
-          <img
-            src="https://cdnlogo.com/logos/f/25/facebook-messenger.svg"
-            alt="Messenger"
-            class="w-15 h-15"
-          />
-        </a>
-      </div>
-      <!-- Nút chính -->
-      <button
-        id="chat-toggle"
-        class="w-12 h-12 rounded-full bg-[#1877F2] flex items-center justify-center shadow-lg hover:scale-110 transition"
-      >
-        <i class="w-6 h-6 text-white" data-lucide="message-circle"></i>
-      </button>
-    </div>
+  <!-- Messenger -->
+  <a
+    href="https://m.me/168331056704131"
+    target="_blank"
+    class="flex items-center px-3 py-2 rounded-full bg-[#1877F2] text-white shadow-md hover:shadow-lg hover:scale-105 transition"
+  >
+    <img
+      src="https://cdnlogo.com/logos/f/25/facebook-messenger.svg"
+      alt="Messenger"
+      class="w-6 h-6 mr-2 bg-white rounded-full p-0.5"
+    />
+    Chat Facebook
+  </a>
+</div>
+
+
     <!-- ================================
          6.Sản phẩm 
     ================================== -->
@@ -1295,18 +1292,10 @@ lucide.createIcons();
 })();
 
 
-// ===========================================================
-// 5. FLOATING CHAT (toggle menu nổi)
-// ===========================================================
-(() => {
-  const chatToggle = document.getElementById("chat-toggle");
-  const chatMenu = document.getElementById("chat-menu");
-  chatToggle.addEventListener("click", () => chatMenu.classList.toggle("hidden"));
-})();
 
 
 // ===========================================================
-// 6. SWIPER (Dự Án Tiêu Biểu)
+// 5. SWIPER (Dự Án Tiêu Biểu)
 // ===========================================================
 new Swiper(".myProjectSwiper", {
   loop: true,
